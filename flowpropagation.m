@@ -15,7 +15,7 @@ u_m = size(u, 1);
 rule = 2;
 TSPAN_f_rand = [0, Tm*rand];
 [t,j,x] = HyEQsolver( @(x) f(x, u),@(x) g(x, 0),@C,@D,...
-    x_cur,TSPAN_f_rand,JSPAN_f,rule,options,'ode23t');
+    x_cur,TSPAN_f_rand,JSPAN_f,rule,options,'ode45');
 if (j(end, 1) == 1)
     t = t(1:(end - 1), :);
     j = j(1:(end - 1), :);
